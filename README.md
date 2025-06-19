@@ -11,9 +11,11 @@
 4. **orders** – поръчки, направени от клиенти.
 5. **reviews** – рецензии за книги, писани от клиенти.
 
+
+
 ## 📦 Структура на документите
 
-### books
+### Първо е books структурата и след това са authors, customers, orders, reviews 
 ```json
 {
   "title": "Book Title",
@@ -25,4 +27,40 @@
     "pages": 320,
     "publisher": "Penguin"
   }
+}
+
+{
+  "name": "Author Name",
+  "birthYear": 1970,
+  "nationality": "British",
+  "awards": ["Booker Prize", "Nobel"]
+}
+
+{
+  "name": "Customer Name",
+  "email": "example@email.com",
+  "address": {
+    "city": "Sofia",
+    "street": "Vitosha Blvd",
+    "zip": "1000"
+  },
+  "favorites": [ObjectId]
+}
+
+{
+  "customerId": ObjectId,
+  "items": [
+    { "bookId": ObjectId, "quantity": 2 }
+  ],
+  "total": 39.98,
+  "status": "shipped",
+  "orderDate": ISODate("2025-06-15T00:00:00Z")
+}
+
+{
+  "bookId": ObjectId,
+  "customerId": ObjectId,
+  "rating": 4,
+  "comment": "Great read!",
+  "date": ISODate("2025-06-01T00:00:00Z")
 }
